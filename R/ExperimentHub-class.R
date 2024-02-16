@@ -80,6 +80,7 @@ setMethod("cache", "ExperimentHub",
                        cache.fun=setExperimentHubOption,
                        proxy=getExperimentHubOption("PROXY"),
                        max.downloads=getExperimentHubOption("MAX_DOWNLOADS"),
+                       license=getExperimentHubOption("LICENSE"),
                        force=force, verbose=verbose)
     }
 )

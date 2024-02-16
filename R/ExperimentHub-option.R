@@ -3,10 +3,10 @@
 getExperimentHubOption <- function(arg) {
     stopifnot(is.character(arg), length(arg) == 1L)
     arg <- toupper(arg)
-    key <- c("URL", "CACHE", "PROXY", "MAX_DOWNLOADS", "LOCAL", "ASK")
+    key <- c("URL", "CACHE", "PROXY", "MAX_DOWNLOADS", "LOCAL", "ASK", "LICENSE")
     if (!arg %in% key)
         stop("'arg' must be one of 'URL', 'CACHE', 'PROXY', ",
-             "'LOCAL', 'ASK' or 'MAXDOWNLOADS'")
+             "'LOCAL', 'ASK', 'LICENSE' or 'MAXDOWNLOADS'")
     .EH_hub_options[[arg]]
 }
 
@@ -38,6 +38,10 @@ setExperimentHubOption <- function(arg, value)
         value
     }, ASK={
         stopifnot(isTRUE(value) || isFALSE(value))
+        value
+    }, LICENSE={
+        value <- as.character(value)
+        stopifnot(isSingleString(value))
         value
     })
 }

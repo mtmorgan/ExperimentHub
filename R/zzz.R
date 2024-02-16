@@ -38,5 +38,9 @@
         opt <- as.logical(opt)
         setExperimentHubOption("ASK", opt)
     }
-
+    if (is.null(getExperimentHubOption("LICENSE"))) {
+        opt <- getOption("EXPERIMENT_HUB_LICENSE", "")
+        opt <- Sys.getenv("EXPERIMENT_HUB_LICENSE", opt)
+        setExperimentHubOption("LICENSE", opt)
+    }
 }
