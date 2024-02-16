@@ -62,6 +62,8 @@ setExperimentHubOption(arg, value)
       asking. If TRUE will ask the user and if in a non interactive
       session utilize a temporary directoy for the caching.
       Default: TRUE.}
+
+    \item{\dQuote{LICENSE}:}{character(). List of approved licenses.}
   }
 
   Default values may also be determined by system and global R
